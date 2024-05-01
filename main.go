@@ -1,17 +1,15 @@
 package main
 
-import {
+import (
     "log"
     "chat-server-golang/network"
-}
-
+)
 
 func init() {
-    log.Println("start golang-server!!")
+    log.Println("Start init!!")
 }
 
 func main() {
     n := network.NewServer()
-
     n.StartServer()
 }
