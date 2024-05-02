@@ -3,11 +3,8 @@ package network
 import(
 	"time"
 	"log"
-
     "net/http"
-
     . "chat-server-golang/types"
-
     "github.com/gin-gonic/gin"
     "github.com/gorilla/websocket"
 )
