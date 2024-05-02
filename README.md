@@ -2,9 +2,10 @@
 : chat-server-golang-with-websocket
 
 ## tech stack
-: go, gin
+: go, gin, websocket
 
 ## sample websocket on
+
 ```
 [connection]
 [message]
@@ -14,7 +15,7 @@
 ## Getting Started
 
 ```
-USING (Recommend)
+USING
 $ go mod tidy
 $ go run .
 ```

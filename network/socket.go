@@ -1,6 +1,9 @@
 package network
 
 import(
+	"time"
+	"log"
+
     "net/http"
 
     . "chat-server-golang/types"
@@ -50,8 +53,14 @@ func (c *client) Read() {
         var msg *message
         err := c.Socket.ReadJSON(&msg)
         if err != nil {
-            panic(err)
+            if !websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway) {
+                break;
+            } else {
+                panic(err);
+            }
         } else {
+            log.Println("READ : ", msg, "client", c.Name)
+
             msg.Time = time.Now().Unix()
             msg.Name = c.Name
 
@@ -65,6 +74,8 @@ func (c *client) Write() {
 
     // 클라이언트가 메시지를 전송하는 함수
     for msg := range c.Send {
+        log.Println("WRITE : ", msg, "client", c.Name)
+
         err := c.Socket.WriteJSON(msg)
         if err != nil {
             panic(err)

@@ -28,6 +28,8 @@ func NewServer() *Network {
     go r.RunInit()
     // 백그라운드에서 실행
 
+
+
     n.engin.GET("/room", r.SocketServe)
 
     return n
