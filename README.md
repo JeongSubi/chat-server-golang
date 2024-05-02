@@ -4,10 +4,11 @@
 ## tech stack
 : go, gin
 
-
-## sample API
+## sample websocket on
 ```
-[chat]
+[connection]
+[message]
+[close]
 ```
 
 ## Getting Started
