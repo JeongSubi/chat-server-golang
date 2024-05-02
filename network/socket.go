@@ -46,6 +46,7 @@ func NewRoom() *Room {
 func (c *client) Read() {
     // 클라이언트가 들어오는 메시지를 읽는 함수
     defer c.Socket.Close()
+
     for {
         var msg *message
         err := c.Socket.ReadJSON(&msg)
